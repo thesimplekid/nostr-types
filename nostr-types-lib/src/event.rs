@@ -889,7 +889,7 @@ fn get_leading_zero_bits(bytes: &[u8]) -> u8 {
 
 #[cfg(test)]
 mod test {
-    use crate::types::*;
+    use crate::*;
 
     test_serde! {Event, test_event_serde}
 

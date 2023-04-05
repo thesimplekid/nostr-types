@@ -10,7 +10,10 @@ readme = "README.md"
 keywords = [ "nostr" ]
 license = "MIT"
 
+[workspace]
+
 [dependencies]
+nostr-types-lib = { path = "nostr-types-lib"}
 aes = "0.8"
 base64 = "0.21"
 bech32 = "0.9"
@@ -39,6 +42,46 @@ thiserror = "1.0"
 tungstenite = { version = "0.18", features = [ "rustls-tls-webpki-roots" ] }
 url = "2.3"
 zeroize = "1.5"
+
+[[bin]]
+name = "bech32_to_any"
+path = "src/bech32_to_any.rs"
+
+[[bin]]
+name = "decrypt_private_key"
+path = "src/decrypt_private_key.rs"
+
+[[bin]]
+name = "dump_relay"
+path = "src/dump_relay.rs"
+
+[[bin]]
+name = "encrypt_private_key"
+path = "src/encrypt_private_key.rs"
+
+[[bin]]
+name = "fetch_nip11"
+path = "src/fetch_nip11.rs"
+
+[[bin]]
+name = "generate_keypair"
+path = "src/generate_keypair.rs"
+
+[[bin]]
+name = "pubkey_to_bech32"
+path = "src/pubkey_to_bech32.rs"
+
+[[bin]]
+name = "privkey_to_bech32"
+path = "src/privkey_to_bech32.rs"
+
+[[bin]]
+name = "pull_event"
+path = "src/pull_event.rs"
+
+[[bin]]
+name = "verify_keypair"
+path = "src/verify_keypair.rs"
 
 # Force scrypt to build with release-like speed even in dev mode
 [profile.dev.package.scrypt]

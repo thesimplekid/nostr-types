@@ -2,7 +2,7 @@
 #![allow(clippy::uninlined_format_args)]
 
 use bech32::FromBase32;
-use nostr_types::{PrivateKey, PublicKey};
+use nostr_types_lib::{PrivateKey, PublicKey};
 
 fn main() {
     println!("bech32: ");

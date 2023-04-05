@@ -1,3 +1,28 @@
+//! This crate provides types for nostr protocol handling.
+
+#![deny(
+    missing_debug_implementations,
+    trivial_casts,
+    trivial_numeric_casts,
+    unused_import_braces,
+    unused_qualifications,
+    unused_results,
+    unused_lifetimes,
+    unused_labels,
+    unused_extern_crates,
+    non_ascii_idents,
+    keyword_idents,
+    deprecated_in_future,
+    unstable_features,
+    single_use_lifetimes,
+    //unsafe_code,
+    unreachable_pub,
+    missing_docs,
+    missing_copy_implementations
+)]
+#![deny(clippy::string_slice)]
+
+
 #[cfg(test)]
 macro_rules! test_serde {
     ($t:ty, $fnname:ident) => {
@@ -76,6 +101,9 @@ pub use unixtime::Unixtime;
 
 mod url;
 pub use self::url::{RelayUrl, UncheckedUrl, Url};
+
+mod error;
+pub use error::Error;
 
 #[cfg(test)]
 mod test {

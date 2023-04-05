@@ -1,9 +1,5 @@
-// Copyright 2015-2020 nostr-proto Developers
-// Licensed under the MIT license <LICENSE-MIT or http://opensource.org/licenses/MIT>
-// This file may not be copied, modified, or distributed except according to those terms.
-
-//! This crate provides types for nostr protocol handling.
-
+//! This crate provides types function for nostr protocol handling.
+//! 
 #![deny(
     missing_debug_implementations,
     trivial_casts,
@@ -26,15 +22,5 @@
 )]
 #![deny(clippy::string_slice)]
 
-mod error;
-pub use error::Error;
 
-mod types;
-pub use types::{
-    find_nostr_bech32_pos, find_nostr_url_pos, ClientMessage, DelegationConditions,
-    EncryptedPrivateKey, Event, EventDelegation, EventKind, EventKindIterator, EventPointer,
-    Filter, Id, IdHex, IdHexPrefix, KeySecurity, Metadata, Nip05, NostrBech32, NostrUrl,
-    PayRequestData, PreEvent, PrivateKey, Profile, PublicKey, PublicKeyHex, PublicKeyHexPrefix,
-    RelayInformationDocument, RelayLimitation, RelayMessage, RelayUrl, Signature, SignatureHex,
-    SimpleRelayList, SimpleRelayUsage, SubscriptionId, Tag, UncheckedUrl, Unixtime, Url,
-};
+pub use nostr_types_lib::{self, *};

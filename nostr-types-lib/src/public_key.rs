@@ -128,7 +128,7 @@ impl Visitor<'_> for PublicKeyVisitor {
     }
 }
 
-#[allow(clippy::derive_hash_xor_eq)]
+#[allow(clippy::derived_hash_with_manual_eq)]
 impl Hash for PublicKey {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.as_hex_string().hash(state);

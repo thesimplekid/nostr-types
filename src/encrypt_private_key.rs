@@ -1,7 +1,7 @@
 // TEMPORARILY
 #![allow(clippy::uninlined_format_args)]
 
-use nostr_types::PrivateKey;
+use nostr_types_lib::PrivateKey;
 use zeroize::Zeroize;
 
 // Turn a hex private key into an encrypted private key

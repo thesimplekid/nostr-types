@@ -1,7 +1,7 @@
 // TEMPORARILY
 #![allow(clippy::uninlined_format_args)]
 
-use nostr_types::{EncryptedPrivateKey, PrivateKey};
+use nostr_types_lib::{EncryptedPrivateKey, PrivateKey};
 
 fn main() {
     println!("DANGER this exposes the private key.");

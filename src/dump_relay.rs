@@ -2,7 +2,7 @@
 #![allow(clippy::uninlined_format_args)]
 
 use base64::Engine;
-use nostr_types::{ClientMessage, Filter, IdHex, RelayMessage, SubscriptionId};
+use nostr_types_lib::{ClientMessage, Filter, RelayMessage, SubscriptionId};
 use std::env;
 use tungstenite::protocol::Message;
 
@@ -11,16 +11,11 @@ fn main() {
     let _ = args.next(); // program name
     let relay_url = match args.next() {
         Some(u) => u,
-        None => panic!("Usage: pull_event <RelayURL> <EventID>"),
-    };
-    let id = match args.next() {
-        Some(id) => id,
-        None => panic!("Usage: pull_event <RelayURL> <EventID>"),
+        None => panic!("Usage: dump_relay <RelayURL>"),
     };
 
-    let mut filter = Filter::new();
-    filter.add_id(IdHex::try_from_string(id).unwrap());
-    let message = ClientMessage::Req(SubscriptionId("fetch".to_owned()), vec![filter]);
+    let filter = Filter::new();
+    let message = ClientMessage::Req(SubscriptionId("dump".to_owned()), vec![filter]);
     let wire = serde_json::to_string(&message).expect("Could not serialize message");
 
     let uri: http::Uri = relay_url.parse::<http::Uri>().expect("Could not parse url");
